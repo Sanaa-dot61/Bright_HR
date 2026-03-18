@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- For Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Committee Attendance Tracker - Bright Future HR</title>
+    <link rel="shortcut icon" href="Photo/pagePhoto.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Committee Attendance Tracker - Bright Future HR</h1>
+      <!-- Session Button -->
+      <button id="sessionBtn" title="Click to login"></button>
+      <p class="subheader">This system is for HR only. Only authorized users can add or edit meetings.</p>
+    </header>
+    <main>
+      <div class="form-row">
+        <div class="input-group">
+          <label class="committeeOptSelect" for="committee">Committee:</label>
+          <select id="committee">
+            <option value="" hidden>Select Committee</option>
+            <option value="HR">HR</option>
+            <option value="PR">PR</option>
+            <option value="Media">Media</option>
+            <option value="Logistics">Logistics</option>
+            <option value="Technical">Technical</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label class="dateOptSelect" for="meetingDate">Date:</label>
+          <input type="date" id="meetingDate">
+        </div>
+      </div>
+      <div id="membersList"></div>
+      <div class="input-group">
+        <label class="noteOptSelect" for="notes">Notes:</label>
+        <textarea id="notes" rows="5"></textarea>
+      </div>
+      <button id="saveBtn">Save Meeting</button>
+      <div id="summarySection">
+        <h2 id="summaryBox"><span id="toggleSummary">&#9654;</span> Attendance & Commitment Summary</h2>
+        <div id="summaryTableContainer" style="display:none;"></div>
+      </div>
+      <div id="memberPointsSection">
+        <h2 id="pointsBox">
+          <span id="togglePoints">&#9654;</span>  Member Points
+        </h2>
+        <div id="pointsTableContainer" style="display:none;"></div>
+      </div>
+    </main>
+    
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Login Required</h3>
+        <div class="input-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username">
+        </div>
+        <div class="input-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password">
+        </div>
+        <button id="loginBtn">Confirm</button>
+      </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+      <div class="modal-content">
+        <span class="close-edit">&times;</span>
+        <h3>Edit Meeting</h3>
+        <div class="form-row">
+          <div class="input-group">
+            <label for="editCommittee">Committee:</label>
+            <input type="text" id="editCommittee" disabled>
+          </div>
+          <div class="input-group">
+            <label for="editMeetingDate">Date:</label>
+            <input type="date" id="editMeetingDate">
+          </div>
+        </div>
+        <div id="editMembersList"></div>
+        <div class="input-group">
+          <label for="editNotes">Notes:</label>
+          <textarea id="editNotes" rows="5"></textarea>
+        </div>
+        <div class="modal-buttons">
+          <button id="saveEditBtn">Save Changes</button>
+          <button id="discardEditBtn">Discard</button>
+        </div>
+      </div>
+    </div>
+    <div class="me">
+      <p class="eng"> Made by Eng. Sanaa Mohamed <i class="far fa-heart"></i> </p>
+    </div>
+    <script type="module" src="js/script.js"></script>
+  </body>
+</html>
