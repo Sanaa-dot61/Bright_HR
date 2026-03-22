@@ -170,7 +170,7 @@ function saveMeetingConfirmed() {
   const meetingDate = new Date(dateInput);
   const today = new Date();
   const twoDaysAgo = new Date();
-  twoDaysAgo.setDate(today.getDate() - 20);
+  twoDaysAgo.setDate(today.getDate() - 30);
 
   if(meetingDate < twoDaysAgo || meetingDate > today){
     alert("Meeting date must be within the last 2 days.");
