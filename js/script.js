@@ -136,7 +136,7 @@ loginBtn.addEventListener("click", () => {
   }
 });
 
-// إنهاء الجلسة عند غلق الـ tab
+// end session when close tab
 window.addEventListener("beforeunload", () => {
   sessionActive = false;
   sessionBtn.classList.remove("active");
